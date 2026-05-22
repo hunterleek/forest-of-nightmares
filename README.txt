@@ -10,7 +10,31 @@
   👉 https://hunterleek.github.io/forest-of-nightmares/
 
   Just click the link above — no downloads, no installs!
-  Works in Chrome, Firefox, Edge, Safari on desktop & mobile.
+  Works in Chrome, Firefox, Edge, Safari on desktop.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🖥️  PLAY OFFLINE — STANDALONE DESKTOP APP
+──────────────────────────────────────────
+
+  ✅ BEST EXPERIENCE — Runs as a native app, no browser!
+
+  ONE-TIME INSTALL:
+    cd ~/games/forest-of-nightmares
+    bash install.sh
+
+  THEN LAUNCH ANY OF THESE WAYS:
+
+    Terminal:    $ forest-of-nightmares
+    App Menu:    Search "Forest of Nightmares" in your launcher
+    Manual:      $ npx electron /path/to/game
+
+  This creates:
+    • A CLI command:  forest-of-nightmares
+    • A desktop entry in your app launcher (with icon)
+    • Fully offline — no internet needed after install
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🎮 CONTROLS
 ───────────
@@ -21,7 +45,9 @@
   SHIFT       = Sprint
   E           = Interact / Collect
   F           = Toggle Flashlight
+  F11         = Fullscreen
   ESC         = Pause / Free cursor
+  Ctrl+Q      = Quit
 
 📖 EPIC STORYLINE
 ─────────────────
@@ -76,36 +102,31 @@
   ✦ Procedural Web Audio soundtrack
   ✦ Cinematic story narration & lore system
   ✦ 60fps optimized game loop
-
-📱 PLATFORMS
-────────────
-  🖥️ Desktop — Full 3D experience (Chrome/Firefox/Edge)
-  📱 Mobile — Touch-optimized controls (mobile.html)
-  🌐 Web — Instant play at the GitHub Pages URL
-  📦 Offline — Download the ZIP and play locally
+  ✦ Native app window with custom menu bar
+  ✦ Fullscreen support (F11)
 
 📦 FILES
 ────────
-  index.html      — Main landing page + instant 3D play
-  3d/index.html   — Standalone 3D version (Three.js)
+  index.html      — GitHub Pages: instant 3D play (online)
+  app.html         — Offline native: local Three.js (no internet)
+  main.js          — Electron app main process
+  package.json     — App config & build scripts
+  threejs/         — Bundled Three.js for offline play
+  icon.png         — App icon
+  install.sh       — One-command desktop installer
+  start-server.sh  — LAN server for sharing with other devices
+  3d/index.html    — Standalone 3D version (online CDN)
   play/index.html  — 2D side-scroller version
-  game-core.js    — 2D game engine (shared)
-  mobile.html     — Mobile touch version
-  install.sh      — Linux desktop installer
-  README.txt      — This file
+  game-core.js     — 2D game engine (shared)
+  mobile.html      — Mobile touch version
+  README.txt       — This file
 
-🔧 TECHNICAL
-────────────
-  Single HTML file, no dependencies, no server needed
-  Runs in any modern browser (Chrome, Firefox, Edge, Safari)
-  3D version uses Three.js via CDN (jsDelivr)
-  Canvas-based 2D version at 60fps
-  Web Audio API for procedural sound
-
-⚡ QUICK START (LOCAL)
-──────────────────────
-  python3 -m http.server 8080
-  # Then open http://localhost:8080
+🔧 BUILD FROM SOURCE
+────────────────────
+  git clone https://github.com/hunterleek/forest-of-nightmares.git
+  cd forest-of-nightmares
+  npm install
+  npm start
 
 💀 TIPS
 ───────
@@ -114,6 +135,7 @@
   • Siren Head's SSJ form is deadly — attack aggressively
   • Use sprint (SHIFT) to evade boss rushes
   • The flashlight helps you see in the dark forest
+  • Press F11 for immersive fullscreen mode
 
-🌲 Made with ❤️ using Three.js + Web Audio
+🌲 Made with Three.js + Electron + Web Audio
    © 2026 Forest of Nightmares — Enhanced Edition

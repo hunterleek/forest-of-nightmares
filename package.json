@@ -1,0 +1,54 @@
+{
+  "name": "forest-of-nightmares",
+  "version": "3.0.0",
+  "description": "🌲 Forest of Nightmares — Cinematic 3D Horror Survival Game",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "app": "electron .",
+    "dev": "electron . --dev",
+    "build-linux": "electron-builder --linux",
+    "build-mac": "electron-builder --mac",
+    "build-win": "electron-builder --win",
+    "build-all": "electron-builder --linux --mac --win",
+    "install-desktop": "bash install.sh"
+  },
+  "build": {
+    "appId": "com.forest-of-nightmares.app",
+    "productName": "Forest of Nightmares",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "app.html",
+      "threejs/**/*",
+      "icon.png"
+    ],
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "icon": "icon.png",
+      "category": "Game"
+    },
+    "mac": {
+      "target": ["dmg"],
+      "icon": "icon.png",
+      "category": "public.app-category.games"
+    },
+    "win": {
+      "target": ["nsis"],
+      "icon": "icon.png"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hunterleek/forest-of-nightmares.git"
+  },
+  "keywords": ["game", "horror", "3d", "survival", "forest"],
+  "author": "hunterleek",
+  "license": "MIT",
+  "homepage": "https://hunterleek.github.io/forest-of-nightmares/",
+  "devDependencies": {
+    "electron": "^35.0.0"
+  }
+}

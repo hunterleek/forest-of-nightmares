@@ -1,69 +1,63 @@
 #!/bin/bash
 # ═══════════════════════════════════════════
 #  FOREST OF NIGHTMARES — Desktop Installer
+#  Installs as native app + CLI command
 # ═══════════════════════════════════════════
 
-GAME_DIR="$HOME/games/forest-of-nightmares"
-DESKTOP_FILE="$HOME/.local/share/applications/forest-of-nightmares.desktop"
+set -e
+GAME_DIR="$(cd "$(dirname "$0")" && pwd)"
+APP_NAME="forest-of-nightmares"
+DESKTOP_FILE="$HOME/.local/share/applications/${APP_NAME}.desktop"
 BIN_DIR="$HOME/.local/bin"
-GAME_BIN="$BIN_DIR/forest-of-nightmares"
+CLI_SCRIPT="$BIN_DIR/${APP_NAME}"
 
-echo "🌲 Installing FOREST OF NIGHTMARES..."
-echo ""
+echo "🌲 Installing Forest of Nightmares..."
+echo "   Game directory: $GAME_DIR"
 
-# Create directories
-mkdir -p "$GAME_DIR" "$BIN_DIR" "$HOME/.local/share/applications"
-
-# Copy game files
-cp "$(dirname "$0")/index.html" "$GAME_DIR/index.html"
-echo "✅ Game files installed to: $GAME_DIR"
-
-# Create launcher script
-cat > "$GAME_BIN" << 'LAUNCHER'
-#!/bin/bash
-BROWSER=""
-for b in google-chrome-stable google-chrome chromium-browser chromium firefox xdg-open; do
-    if command -v "$b" &>/dev/null; then BROWSER="$b"; break; fi
-done
-if [ -z "$BROWSER" ]; then
-    echo "❌ No browser found! Install Chrome, Firefox, or Chromium."
-    exit 1
+# Ensure npm dependencies are installed
+cd "$GAME_DIR"
+if [ ! -d "node_modules/electron" ]; then
+    echo "   Installing Electron..."
+    npm install --silent 2>/dev/null
 fi
-exec "$BROWSER" "$HOME/games/forest-of-nightmares/index.html" &
-LAUNCHER
-chmod +x "$GAME_BIN"
-echo "✅ Launcher created: forest-of-nightmares (run from terminal)"
 
-# Create .desktop file
-cat > "$DESKTOP_FILE" << DESKTOP
+# Create bin directory
+mkdir -p "$BIN_DIR"
+
+# Create CLI launcher script
+cat > "$CLI_SCRIPT" << 'CLIEOF'
+#!/bin/bash
+GAME_DIR="GAME_DIR_PLACEHOLDER"
+cd "$GAME_DIR"
+npx electron . "$@"
+CLIEOF
+sed -i "s|GAME_DIR_PLACEHOLDER|$GAME_DIR|" "$CLI_SCRIPT"
+chmod +x "$CLI_SCRIPT"
+
+# Create desktop entry
+mkdir -p "$HOME/.local/share/applications"
+cat > "$DESKTOP_FILE" << DESKEOF
 [Desktop Entry]
 Type=Application
 Name=Forest of Nightmares
-Comment=Horror survival game — Defeat Cartoon Cat and Siren Head
-Exec=$GAME_BIN
-Icon=applications-games
+Comment=Cinematic 3D Horror Survival Game
+Exec=$CLI_SCRIPT
+Icon=$GAME_DIR/icon.png
 Terminal=false
-Categories=Game;ActionGame;
-Keywords=horror;game;forest;nightmares;cartoon cat;siren head;bendy;cuphead
-StartupWMClass=Forest of Nightmares
-DESKTOP
-echo "✅ Desktop shortcut created"
+Categories=Game;AdventureGame;
+Keywords=game;horror;3d;survival;forest;
+StartupWMClass=forest-of-nightmares
+DESKEOF
 
 # Update desktop database
 update-desktop-database "$HOME/.local/share/applications/" 2>/dev/null || true
 
 echo ""
-echo "╔═══════════════════════════════════════╗"
-echo "║  🌲 INSTALLATION COMPLETE! 🌲       ║"
-echo "╠═══════════════════════════════════════╣"
-echo "║  Launch from terminal:               ║"
-echo "║    $ forest-of-nightmares            ║"
-echo "║                                      ║"
-echo "║  Or find in app menu:                ║"
-echo "║    Applications → Games →            ║"
-echo "║    Forest of Nightmares              ║"
-echo "║                                      ║"
-echo "║  Controls:                           ║"
-echo "║    WASD = Move | SPACE = Jump        ║"
-echo "║    E = Attack | ENTER = Start        ║"
-echo "╚═══════════════════════════════════════╝"
+echo "✅ Forest of Nightmares installed successfully!"
+echo ""
+echo "🎮 WAYS TO LAUNCH:"
+echo "   Terminal:    $ forest-of-nightmares"
+echo "   App menu:    Search 'Forest of Nightmares' in your app launcher"
+echo "   Manual:      $ npx electron $GAME_DIR"
+echo ""
+echo "🌲 The forest awaits..."
