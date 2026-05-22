@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>🌲 Forest of Nightmares — Download</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#08080f;color:#e0d8c8;font-family:'Segoe UI',system-ui,sans-serif;text-align:center;min-height:100vh}
+.bg{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at center,#0a0a1a 0%,#020208 100%);z-index:-1}
+.trees{position:fixed;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,#050505,transparent);z-index:-1}
+.trees::before{content:'';position:absolute;bottom:0;left:0;right:0;height:180px;background:repeating-linear-gradient(90deg,transparent 0px,transparent 60px,#060606 60px,#060606 68px)}
+.container{max-width:800px;margin:0 auto;padding:40px 20px}
+h1{font-size:2.8em;font-weight:900;margin-bottom:8px;background:linear-gradient(135deg,#ff4400,#ff8800,#ff4400);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:none;filter:drop-shadow(0 0 20px rgba(255,60,0,.3))}
+.sub{color:#886644;font-size:1.1em;margin-bottom:40px}
+.card{background:rgba(20,15,25,.7);border:1px solid #2a1a10;border-radius:16px;padding:28px;margin:20px 0;backdrop-filter:blur(10px);transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-2px);border-color:#ff4400}
+.card h2{color:#ff6622;margin-bottom:12px;font-size:1.4em;display:flex;align-items:center;justify-content:center;gap:10px}
+.card p{color:#998877;font-size:.95em;margin-bottom:15px;line-height:1.6}
+.btn{display:inline-block;padding:14px 32px;border-radius:10px;font-weight:700;font-size:1em;text-decoration:none;transition:all .2s;margin:6px;cursor:pointer}
+.btn-p{background:linear-gradient(135deg,#cc3300,#ff6622);color:#fff;box-shadow:0 4px 20px rgba(255,60,0,.3)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(255,60,0,.5)}
+.btn-s{background:rgba(255,255,255,.06);border:2px solid #ff6622;color:#ff6622}
+.btn-s:hover{background:rgba(255,60,0,.15)}
+.btn-g{background:rgba(255,255,255,.06);border:2px solid #44aa44;color:#44cc44}
+.btn-g:hover{background:rgba(50,200,50,.15)}
+.btn-m{background:linear-gradient(135deg,#222,#444);border:2px solid #888;color:#fff}
+.btn-m:hover{background:#3a3a3a;transform:translateY(-2px)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.features{text-align:left;margin:15px 0}
+.features li{color:#aa9977;padding:4px 0;font-size:.9em}
+.features li::marker{color:#ff6622}
+.qr{background:#fff;padding:10px;border-radius:10px;display:inline-block;margin:10px 0}
+.footer{color:#443322;font-size:.8em;margin-top:30px;padding:20px}
+@media(max-width:600px){
+  h1{font-size:1.8em}
+  .grid{grid-template-columns:1fr}
+  .btn{display:block;margin:8px 0}
+}
+</style>
+</head>
+<body>
+<div class="bg"></div><div class="trees"></div>
+<div class="container">
+  <h1>🌲 Forest of Nightmares</h1>
+  <p class="sub">Horror Survival Game — Download & Play</p>
+
+  <div class="card">
+    <h2>🖥️ Desktop Version</h2>
+    <p>Play in your browser — full keyboard controls, 60fps, epic boss fights!</p>
+    <a class="btn btn-p" href="index.html" target="_blank">▶ Play Now (Desktop)</a>
+    <a class="btn btn-s" href="forest-of-nightmares.zip" download>📥 Download ZIP (21KB)</a>
+    <ul class="features">
+      <li>WASD = Move | SPACE = Jump | E = Attack</li>
+      <li>2 Epic boss fights + celebration ending</li>
+      <li>Cartoon Cat stretch, Siren Head Super Saiyan</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📱 Android Mobile</h2>
+    <p>Touch-optimized version with on-screen controls</p>
+    <a class="btn btn-m" href="mobile.html" target="_blank">▶ Play Now (Mobile)</a>
+    <a class="btn btn-s" href="mobile.html" download>📥 Download HTML</a>
+    <p style="font-size:.8em;color:#666;margin-top:8px">Open in Chrome → ⋮ Menu → Add to Home Screen for app-like experience</p>
+  </div>
+
+  <div class="card">
+    <h2>🔗 Share on LAN</h2>
+    <p>Anyone on your WiFi can access this page:</p>
+    <a class="btn btn-s" href="http://192.168.40.168:8888" target="_blank">http://192.168.40.168:8888</a>
+    <p style="font-size:.8em;color:#666;margin-top:8px">Open this link on any device connected to the same WiFi network</p>
+  </div>
+
+  <div class="card">
+    <h2>🐙 GitHub Repo</h2>
+    <p>Source code, issues, and live GitHub Pages:</p>
+    <a class="btn btn-g" href="https://github.com/hunterleek/forest-of-nightmares" target="_blank">🌐 View on GitHub</a>
+  </div>
+
+  <div class="footer">
+    Made with Canvas + Web Audio | No dependencies | Single-file game<br>
+    © 2026 Forest of Nightmares
+  </div>
+</div>
+</body>
+</html>

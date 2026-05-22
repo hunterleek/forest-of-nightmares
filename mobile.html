@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,viewport-fit=cover">
+<title>🌲 FOREST OF NIGHTMARES</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#000000">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
+body{background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;height:100dvh;overflow:hidden;touch-action:manipulation}
+#game-wrap{position:relative;flex:1;display:flex;align-items:center;justify-content:center;width:100%}
+canvas{display:block;border:2px solid #1a0a00;border-radius:6px;box-shadow:0 0 30px rgba(255,50,0,.2)}
+#tc{position:fixed;bottom:8px;left:0;right:0;display:flex;justify-content:space-between;padding:0 8px;z-index:100}
+.tb{width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.18);color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;transition:all .06s;touch-action:manipulation}
+.tb.on{background:rgba(255,80,0,.45);border-color:#ff6622;transform:scale(.88);box-shadow:0 0 12px rgba(255,80,0,.4)}
+.tb.jmp{width:64px;height:64px;font-size:13px;font-weight:bold;background:rgba(255,255,255,.15)}
+.tb.atk{width:60px;height:60px;background:rgba(255,20,0,.22);border-color:#ff3300;font-size:22px}
+.tb.atk.on{background:rgba(255,0,0,.55);box-shadow:0 0 24px rgba(255,0,0,.6)}
+#dp{display:grid;grid-template-columns:44px 44px 44px;grid-template-rows:44px 44px 44px;gap:2px}
+.db{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.15);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .06s;touch-action:manipulation}
+.db.on{background:rgba(255,80,0,.4);border-color:#ff6622}
+.de{width:44px;height:44px}
+</style>
+</head>
+<body>
+<div id="game-wrap"><canvas id="game"></canvas></div>
+<div id="tc">
+  <div><div id="dp">
+    <div class="de"></div><button class="db" id="u">▲</button><div class="de"></div>
+    <button class="db" id="l">◀</button><button class="db jmp" id="j" style="font-size:11px">JUMP</button><button class="db" id="r">▶</button>
+    <div class="de"></div><button class="db" id="d">▼</button><div class="de"></div>
+  </div></div>
+  <div style="display:flex;align-items:flex-end"><button class="tb atk" id="a">⚔️</button></div>
+</div>
+
+<script>
+// ════════ TOUCH INPUT ════════
+function bind(id,k){
+    const b=document.getElementById(id);
+    function on(e){e.preventDefault();touchInput[k]=true;b.classList.add('on');audio()}
+    function off(e){e.preventDefault();touchInput[k]=false;b.classList.remove('on')}
+    b.addEventListener('touchstart',on);b.addEventListener('touchend',off);b.addEventListener('touchcancel',off);
+    b.addEventListener('mousedown',on);b.addEventListener('mouseup',off);b.addEventListener('mouseleave',off);
+}
+bind('u','arrowup');bind('d','arrowdown');bind('l','arrowleft');bind('r','arrowright');bind('j',' ');bind('a','e');
+
+// Canvas scaling for mobile
+const c=document.getElementById('game');
+c.width=1100;c.height=620;
+function rz(){const mw=window.innerWidth-10,mh=window.innerHeight-145,s=Math.min(mw/1100,mh/620,1.15);c.style.width=1100*s+'px';c.style.height=620*s+'px'}
+window.addEventListener('resize',rz);window.addEventListener('orientationchange',()=>setTimeout(rz,300));rz();
+
+// Init audio on first touch
+const aInit=()=>{audio();document.body.removeEventListener('touchstart',aInit)};
+document.body.addEventListener('touchstart',aInit);
+
+console.log('📱 FOREST OF NIGHTMARES — Mobile Ready with Touch Controls');
+</script>
+<script src="game-core.js"></script>
+</body>
+</html>
