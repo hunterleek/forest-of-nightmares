@@ -1,5 +1,8 @@
 node_modules/
 dist/
+android/
 *.log
 .DS_Store
 thumbs.db
+android-build/
+forest-of-nightmares.apk

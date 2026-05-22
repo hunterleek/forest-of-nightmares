@@ -1,141 +1,209 @@
 ╔══════════════════════════════════════════════════════════╗
 ║                                                          ║
 ║           🌲 FOREST OF NIGHTMARES 🌲                     ║
-║       Cinematic 3D Horror Survival Game v3.0             ║
+║     Ultra-Realistic 3D Horror Survival Game v3.0         ║
 ║                                                          ║
 ╚══════════════════════════════════════════════════════════╝
 
-🌐 PLAY ONLINE (GitHub Pages)
-──────────────────────────────
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🌐  PLAY ONLINE — NO INSTALL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   👉 https://hunterleek.github.io/forest-of-nightmares/
 
-  Just click the link above — no downloads, no installs!
-  Works in Chrome, Firefox, Edge, Safari on desktop.
+  Works instantly in Chrome, Firefox, Edge, Safari.
+  Mobile: Open in Chrome → Menu → "Install App" / "Add to Home Screen"
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🖥️  STANDALONE DESKTOP APP (LINUX)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Runs as a native app — no browser! Full offline play.
 
-🖥️  PLAY OFFLINE — STANDALONE DESKTOP APP
-──────────────────────────────────────────
+  INSTALL (one-time):
+    cd ~/games/forest-of-nightmares && bash install.sh
 
-  ✅ BEST EXPERIENCE — Runs as a native app, no browser!
+  LAUNCH:
+    Terminal:     forest-of-nightmares
+    Start Menu:   Search "Forest of Nightmares"
+    Direct:       npx electron /path/to/game
 
-  ONE-TIME INSTALL:
-    cd ~/games/forest-of-nightmares
-    bash install.sh
+  Creates:
+    • Desktop entry with icon in your app launcher
+    • CLI command: forest-of-nightmares
+    • Own window with custom menu bar (F11 fullscreen)
 
-  THEN LAUNCH ANY OF THESE WAYS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📱  MOBILE (ANDROID)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  OPTION 1: Install as PWA (Easiest!)
+    • Open https://hunterleek.github.io/forest-of-nightmares/
+      in Chrome on your Android phone
+    • Tap ⋮ Menu → "Add to Home Screen" / "Install App"
+    • The game installs as a standalone app with its own icon!
+    • Works offline after first load
 
-    Terminal:    $ forest-of-nightmares
-    App Menu:    Search "Forest of Nightmares" in your launcher
-    Manual:      $ npx electron /path/to/game
+  OPTION 2: Build APK
+    cd forest-of-nightmares && bash build-apk.sh
+    • Requires Android SDK + Java 17
+    • Or use online builders:
+      https://www.pwabuilder.com/
+      https://webintoapp.com/
 
-  This creates:
-    • A CLI command:  forest-of-nightmares
-    • A desktop entry in your app launcher (with icon)
-    • Fully offline — no internet needed after install
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🎮 CONTROLS
 ───────────
   WASD        = Move
   Mouse       = Look around
-  Click       = Attack
+  Click       = Attack (melee)
   SPACE       = Jump
   SHIFT       = Sprint
-  E           = Interact / Collect
   F           = Toggle Flashlight
+  R           = Reload
   F11         = Fullscreen
   ESC         = Pause / Free cursor
   Ctrl+Q      = Quit
 
+📱 MOBILE TOUCH CONTROLS:
+  Left side   = Move (drag)
+  Right side  = Look (drag)
+  Tap center  = Attack
+  Bottom      = Jump
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 📖 EPIC STORYLINE
 ─────────────────
-  You are KAEL, a wanderer drawn by fate into the cursed
-  BLACKWOOD FOREST. Ancient evil stirs beneath the trees.
+  You are KAEL, the last wanderer. The cursed BLACKWOOD
+  FOREST has swallowed countless souls over centuries.
   
-  The forest is guarded by two terrifying entities:
-  
+  Dark forces stir. Two ancient entities guard the forest:
+
   BOSS 1: CARTOON CAT 🐱
   ────────────────────────
-  A grotesque, towering feline with stretch attacks.
-  Guards the old well where souls are trapped.
+  A grotesque, towering feline predator.
   • Extends limbs across the darkness to grab prey
-  • Piercing yellow eyes track your every move
-  • 300 HP — heavy melee attacks and lunges
-  
+  • Piercing yellow eyes track every move
+  • 350 HP — stretch attacks, lunges, rakes
+  • Blood splatters on every hit
+
   BOSS 2: SIREN HEAD 📢
   ────────────────────────
   The warden of the Blackwood — a colossal entity
   with twin siren speakers for a head.
   • Ear-splitting scream waves
   • At 35% HP: TRANSFORMS INTO SUPER SAIYAN!
-  • Golden aura, double speed, boosted damage
-  • 500 HP — the ultimate test of survival
+  • Golden aura, doubled speed, mega damage
+  • 550 HP — the ultimate test
+  • Massive blood/gore effects on defeat
 
   COLLECT THE LORE STONES 🪨
   ─────────────────────────
   3 glowing blue stones scattered through the forest.
-  Each reveals a fragment of the Blackwood's dark history.
-  Collect all three to unlock the ancient power.
+  Each reveals a dark fragment of the Blackwood's history.
+  Collect all three to unlock the ancient power!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🕺 CINEMATIC ENDING
 ───────────────────
-  After defeating both bosses:
-  ★ BENDY — Hits the GRIDDY dance with sparkles
-  ★ CUPHEAD — Consumes CENSORED pizza
-  ★ MR. KRABS — "I LOVE MONEY!" then gets FRIED & COOKED
-  ★ A victory portal appears — the curse is broken!
+  ★ BENDY — Hits the GRIDDY with sparkles & music
+  ★ CUPHEAD — CENSORED pizza + Orange Justice
+  ★ MR. KRABS — "I LOVE MONEY!" then FRIED & COOKED
+  ★ Victory portal erupts — souls are freed!
+  ★ Blood decals fade, the sun rises
 
-🎨 GRAPHICS & FEATURES
-───────────────────────
-  ✦ Fully 3D rendered with Three.js
-  ✦ Procedural terrain with height variation
-  ✦ 180+ realistic trees with 3 canopy variants
-  ✦ Volumetric fog & dynamic mist system
-  ✦ Fireflies, grass patches, mushrooms, rocks
-  ✦ Real-time lighting: moonlight, flashlight, god rays
-  ✦ Post-processing: ACES tonemapping, vignette
-  ✦ Soft shadows (PCF Shadow Maps)
-  ✦ Particle effects: hit sparks, boss explosions, blood
-  ✦ Screen shake & damage flash
-  ✦ Procedural Web Audio soundtrack
-  ✦ Cinematic story narration & lore system
-  ✦ 60fps optimized game loop
-  ✦ Native app window with custom menu bar
-  ✦ Fullscreen support (F11)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎨 ULTRA REALISTIC GRAPHICS
+───────────────────────────
+  ✦ Procedural 3D terrain with rolling hills
+  ✦ 200+ trees with bark textures (3 canopy variants)
+  ✦ Dynamic wind system — trees & grass sway
+  ✦ Realistic rain system — 2000+ droplets
+  ✦ Thunder & lightning strikes (illuminates forest)
+  ✦ Volumetric fog with height-based density
+  ✦ God rays from moonlight through canopy
+  ✦ Fireflies — 100 glowing particles
+  ✦ 50 mist volumes drifting through trees
+  ✦ 500 grass blades, 60 mushrooms, 90 rocks
+  ✦ 30 reflective water puddles
+  ✦ Blood splatter screen overlay on damage
+  ✦ Persistent blood decals on the ground
+  ✦ PBR materials: roughness, metalness, specular
+  ✦ ACES filmic tone mapping
+  ✦ Film grain overlay (animated)
+  ✦ Cinematic vignette
+  ✦ Soft PCF shadows (2048px maps)
+  ✦ Lens flare / screen flash on damage
+  ✦ Screen shake + damage flash
+  ✦ 3 lore stones with emissive glow
+  ✦ Particle systems: sparks, blood, magic, explosions
+
+🎵 AUDIO
+────────
+  Procedural Web Audio — no files needed!
+  ✦ Ambient forest winds + creaking branches
+  ✦ Footstep sounds on different surfaces
+  ✦ Boss roars, stretch attacks, SSJ power-up
+  ✦ Thunder cracks, rain drops
+  ✦ Combat hit sounds, blood splatter
+  ✦ Victory fanfare + celebration music
+  ✦ Whispers from lore stones
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📦 FILES
 ────────
-  index.html      — GitHub Pages: instant 3D play (online)
-  app.html         — Offline native: local Three.js (no internet)
-  main.js          — Electron app main process
-  package.json     — App config & build scripts
-  threejs/         — Bundled Three.js for offline play
-  icon.png         — App icon
-  install.sh       — One-command desktop installer
-  start-server.sh  — LAN server for sharing with other devices
-  3d/index.html    — Standalone 3D version (online CDN)
-  play/index.html  — 2D side-scroller version
-  game-core.js     — 2D game engine (shared)
-  mobile.html      — Mobile touch version
-  README.txt       — This file
+  index.html        — Online version (CDN Three.js + GitHub Pages)
+  app.html          — Offline native (local Three.js for Electron)
+  main.js           — Electron desktop app wrapper
+  package.json      — App config + build scripts
+  threejs/          — Bundled Three.js for offline play
+  sw.js             — Service Worker for PWA offline mode
+  manifest.json     — PWA manifest for mobile install
+  icon.png          — App icon (256px)
+  icon-512.png      — App icon (512px for mobile)
+  install.sh        — Desktop launcher installer
+  build-apk.sh      — Android APK builder
+  start-server.sh   — LAN server for sharing
+  capacitor.config.json — Capacitor mobile config
+  README.txt        — This file
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🔧 BUILD FROM SOURCE
 ────────────────────
   git clone https://github.com/hunterleek/forest-of-nightmares.git
   cd forest-of-nightmares
   npm install
+
+  # Desktop App:
   npm start
 
-💀 TIPS
-───────
-  • Collect all 3 lore stones for the best ending
-  • Dodge Cartoon Cat's stretch by staying far
-  • Siren Head's SSJ form is deadly — attack aggressively
-  • Use sprint (SHIFT) to evade boss rushes
-  • The flashlight helps you see in the dark forest
-  • Press F11 for immersive fullscreen mode
+  # Android APK:
+  bash build-apk.sh
 
-🌲 Made with Three.js + Electron + Web Audio
-   © 2026 Forest of Nightmares — Enhanced Edition
+  # Local server (for LAN):
+  bash start-server.sh
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💀 SURVIVAL TIPS
+────────────────
+  • Collect all 3 lore stones — they unlock power
+  • Sprint (SHIFT) to dodge boss attacks
+  • Cartoon Cat's stretch has a 1-second windup — MOVE!
+  • Siren Head's SSJ mode is DEADLY — attack relentlessly
+  • Rain intensifies during boss fights — atmosphere + danger
+  • Look for glowing blue stones through the fog
+  • The flashlight helps spot enemies in darkness
+  • Dodge INTO attacks, not away (invincibility frames)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🐙 GITHUB
+─────────
+  https://github.com/hunterleek/forest-of-nightmares
+
+🌲 Made with Three.js + Electron + Web Audio + Blood
+   © 2026 Forest of Nightmares — Ultra Realistic Edition

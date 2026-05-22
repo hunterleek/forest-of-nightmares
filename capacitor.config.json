@@ -1,0 +1,13 @@
+{
+  "appId": "com.forestofnightmares.game",
+  "appName": "ForestOfNightmares",
+  "webDir": ".",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}
