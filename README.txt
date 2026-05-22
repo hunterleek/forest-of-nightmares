@@ -1,90 +1,119 @@
-╔══════════════════════════════════════════════════╗
-║                                                  ║
-║         🌲 FOREST OF NIGHTMARES 🌲               ║
-║         Horror Survival Game v2.0                ║
-║                                                  ║
-╚══════════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════╗
+║                                                          ║
+║           🌲 FOREST OF NIGHTMARES 🌲                     ║
+║       Cinematic 3D Horror Survival Game v3.0             ║
+║                                                          ║
+╚══════════════════════════════════════════════════════════╝
 
-🎮 HOW TO PLAY (DESKTOP)
-─────────────────────────
-  Terminal:  $ forest-of-nightmares
-  Or find in: Applications → Games → Forest of Nightmares
-  Or open:    ~/games/forest-of-nightmares/index.html in browser
+🌐 PLAY ONLINE (GitHub Pages)
+──────────────────────────────
+  👉 https://hunterleek.github.io/forest-of-nightmares/
 
-  CONTROLS:
-    WASD        = Move
-    SPACE       = Jump
-    E           = Attack
-    ENTER/Click = Start / Skip dialog
+  Just click the link above — no downloads, no installs!
+  Works in Chrome, Firefox, Edge, Safari on desktop & mobile.
 
-📱 HOW TO PLAY (ANDROID MOBILE)
-────────────────────────────────
-  1. Transfer mobile.html to your phone
-     $ adb push ~/games/forest-of-nightmares/mobile.html /sdcard/Download/
+🎮 CONTROLS
+───────────
+  WASD        = Move
+  Mouse       = Look around
+  Click       = Attack
+  SPACE       = Jump
+  SHIFT       = Sprint
+  E           = Interact / Collect
+  F           = Toggle Flashlight
+  ESC         = Pause / Free cursor
+
+📖 EPIC STORYLINE
+─────────────────
+  You are KAEL, a wanderer drawn by fate into the cursed
+  BLACKWOOD FOREST. Ancient evil stirs beneath the trees.
   
-  2. On your phone, open Chrome and navigate to:
-     file:///sdcard/Download/mobile.html
-  
-  3. Or host it on a local server and open in any browser
-  
-  4. Touch controls appear at the bottom:
-     D-Pad = Move  |  JUMP button  |  ⚔️ Attack button
-
-🐱 STORY & BOSSES
-──────────────────
-  You are lost in a dark forest. Fight your way through:
+  The forest is guarded by two terrifying entities:
   
   BOSS 1: CARTOON CAT 🐱
-    - Giant cartoon cat with stretch attacks
-    - Extends limbs across the screen to grab you
-    - Glowing eyes, creepy grin, sharp teeth
+  ────────────────────────
+  A grotesque, towering feline with stretch attacks.
+  Guards the old well where souls are trapped.
+  • Extends limbs across the darkness to grab prey
+  • Piercing yellow eyes track your every move
+  • 300 HP — heavy melee attacks and lunges
   
   BOSS 2: SIREN HEAD 📢
-    - Towering creature with siren speakers for a head
-    - When health drops below 35%, GOES SUPER SAIYAN!
-    - Golden aura, faster attacks, energy beams
-    - Scream waves, stomp shockwaves, rush attacks
+  ────────────────────────
+  The warden of the Blackwood — a colossal entity
+  with twin siren speakers for a head.
+  • Ear-splitting scream waves
+  • At 35% HP: TRANSFORMS INTO SUPER SAIYAN!
+  • Golden aura, double speed, boosted damage
+  • 500 HP — the ultimate test of survival
 
-🕺 ENDING SEQUENCE
+  COLLECT THE LORE STONES 🪨
+  ─────────────────────────
+  3 glowing blue stones scattered through the forest.
+  Each reveals a fragment of the Blackwood's dark history.
+  Collect all three to unlock the ancient power.
+
+🕺 CINEMATIC ENDING
 ───────────────────
   After defeating both bosses:
-  
-  ★ BENDY — Hits the GRIDDY dance with sparkles & music notes
-  ★ CUPHEAD — Eats CENSORED pizza + does ORANGE JUSTICE
-  ★ MR. KRABS — Says "I LOVE MONEY!" then gets FRIED & COOKED
-  
-  (All graphic content properly CENSORED for your safety)
+  ★ BENDY — Hits the GRIDDY dance with sparkles
+  ★ CUPHEAD — Consumes CENSORED pizza
+  ★ MR. KRABS — "I LOVE MONEY!" then gets FRIED & COOKED
+  ★ A victory portal appears — the curse is broken!
 
-🎵 AUDIO
-─────────
-  Procedural Web Audio — works in all modern browsers
-  Ambient forest sounds, attack effects, boss roars,
-  Super Saiyan transformation sound, dance music
+🎨 GRAPHICS & FEATURES
+───────────────────────
+  ✦ Fully 3D rendered with Three.js
+  ✦ Procedural terrain with height variation
+  ✦ 180+ realistic trees with 3 canopy variants
+  ✦ Volumetric fog & dynamic mist system
+  ✦ Fireflies, grass patches, mushrooms, rocks
+  ✦ Real-time lighting: moonlight, flashlight, god rays
+  ✦ Post-processing: ACES tonemapping, vignette
+  ✦ Soft shadows (PCF Shadow Maps)
+  ✦ Particle effects: hit sparks, boss explosions, blood
+  ✦ Screen shake & damage flash
+  ✦ Procedural Web Audio soundtrack
+  ✦ Cinematic story narration & lore system
+  ✦ 60fps optimized game loop
 
-🔧 TECHNICAL
-─────────────
-  Single HTML file, no dependencies, no server needed
-  Runs in any modern browser (Chrome, Firefox, Edge)
-  Canvas-based rendering at 60fps
-  Particle effects, screen shake, fog, lightning
-  Responsive scaling for any screen size
+📱 PLATFORMS
+────────────
+  🖥️ Desktop — Full 3D experience (Chrome/Firefox/Edge)
+  📱 Mobile — Touch-optimized controls (mobile.html)
+  🌐 Web — Instant play at the GitHub Pages URL
+  📦 Offline — Download the ZIP and play locally
 
 📦 FILES
-─────────
-  index.html      — Desktop version (loads game-core.js)
-  game-core.js    — Shared game engine (1186 lines)
-  mobile.html     — Mobile version with touch controls
+────────
+  index.html      — Main landing page + instant 3D play
+  3d/index.html   — Standalone 3D version (Three.js)
+  play/index.html  — 2D side-scroller version
+  game-core.js    — 2D game engine (shared)
+  mobile.html     — Mobile touch version
   install.sh      — Linux desktop installer
   README.txt      — This file
 
-⚡ QUICK INSTALL
-────────────────
-  cd ~/games/forest-of-nightmares
-  bash install.sh
+🔧 TECHNICAL
+────────────
+  Single HTML file, no dependencies, no server needed
+  Runs in any modern browser (Chrome, Firefox, Edge, Safari)
+  3D version uses Three.js via CDN (jsDelivr)
+  Canvas-based 2D version at 60fps
+  Web Audio API for procedural sound
 
-💀 GAME OVER
-─────────────
-  If you die, press ENTER to try again.
-  The forest remembers...
+⚡ QUICK START (LOCAL)
+──────────────────────
+  python3 -m http.server 8080
+  # Then open http://localhost:8080
 
-🌲 Made with pure HTML5 Canvas + Web Audio
+💀 TIPS
+───────
+  • Collect all 3 lore stones for the best ending
+  • Dodge Cartoon Cat's stretch by staying far
+  • Siren Head's SSJ form is deadly — attack aggressively
+  • Use sprint (SHIFT) to evade boss rushes
+  • The flashlight helps you see in the dark forest
+
+🌲 Made with ❤️ using Three.js + Web Audio
+   © 2026 Forest of Nightmares — Enhanced Edition
